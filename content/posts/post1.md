@@ -6,6 +6,14 @@ tags = ["react", "nextjs", "zustand", "hydration", "debugging"]
 category = "general"
 +++
 
+<style>
+.highlight,
+pre {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+</style>
+
 
 I hit a bug in my Zustand/React app, and solving it helped me to see exactly how React’s rendering lifecycle works.
 
@@ -13,14 +21,12 @@ I created a very basic app to log observations of native plant and animal specie
 
 
 <video controls preload="metadata" width="100%">
-  <source src="{{< staticurl "post1/screenRecordingBlogPost1.mp4" >}}" type="video/mp4">
-  <source src="{{< staticurl "post1/screenRecordingBlogPost1.m4v" >}}" type="video/mp4">
-  <source src="{{< staticurl "post1/screenRecordingBlogPost1.mov" >}}" type="video/quicktime">
+  <source src="/personalBlog/post1/screenRecordingBlogPost1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 
-[Download the screen recording]({{< staticurl "post1/screenRecordingBlogPost1.mp4" >}})
+[Download the screen recording](/personalBlog/post1/screenRecordingBlogPost1.mp4)
 
 
 My simple React and Next.js app has a Zustand store to manage its state. My Zustand store has three state fields:
@@ -89,7 +95,7 @@ Only one of my selectors, selectObservationById, didn’t cause any errors; sadl
 
 Here’s where I hit my bug.
 
-![Screenshot 2025-10-05 at 10.47.52.png]({{< staticurl "post1/errorMessageBlog1.png" >}})
+<img src="/personalBlog/post1/errorMessageBlog1.png" alt="Screenshot 2025-10-05 at 10.47.52.png">
 
 selectAllObservations and selectFilteredObservations both use built-in functions (.map() and .filter()), and after some digging I realised that they were causing issues because of React’s rendering lifecycle. Here’s a quick little reminder of how it works.
 
@@ -104,7 +110,7 @@ The problem is that Map and Filter functions produce a new array instance on eve
 [Understanding React's render phase (Stackademic)](https://blog.stackademic.com/understanding-reacts-render-phase-a-simplified-guide-3a84ea7aacba)
 
 
-<img src="{{< staticurl "post1/diagramBlog1.jpg" >}}" alt="The objects don’t look the same any more" style="width: 66.67%; height: auto;">
+<img src="/personalBlog/post1/diagramBlog1.jpg" alt="The objects don’t look the same any more" style="width: 66.67%; height: auto;">
 
 The objects don’t look the same any more
 
