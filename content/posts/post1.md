@@ -32,6 +32,7 @@ const observations = allIds.map((id) => byId[id])
 
 - And lastly, filters, which stores the current active filters; elsewhere in my store I’ve set these to be ‘location’ and ‘species’, like you can see in the filter boxes above.
 
+
 ```jsx
 export const useSpeciesStore = create<ObservationsState>()(
   (set) => ({
@@ -56,7 +57,9 @@ export const useSpeciesStore = create<ObservationsState>()(
   )
 ```
 
+
 I defined some selectors in my Zustand SpeciesStore file. This seemed like a nice clean way to filter my data and return the observations with the correct species or location.
+
 
 ```jsx
 export const selectObservationById =
