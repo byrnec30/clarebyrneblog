@@ -5,6 +5,4 @@ description = "About this site."
 draft = false
 +++
 
-This is a personal diary-style website generated with Hugo.
 
-The look and layout are based on the Diary theme, with deployment handled by GitHub Actions and GitHub Pages.
